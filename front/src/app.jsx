@@ -1,8 +1,8 @@
+// Vendors
 import React, { Component } from 'react';
-
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import Overview from './routes/overview';
 
+// Layouts
 import Layout from './routes/layout.jsx';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
 			<Router>
 				<div className="App">
 					<Switch>
-						<Layout exact path="/" component={Overview} />
+						<Layout exact path="/" />
 					</Switch>
 				</div>
 			</Router>

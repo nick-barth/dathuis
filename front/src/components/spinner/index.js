@@ -3,8 +3,8 @@ import React from 'react';
 // CSS
 import './index.css';
 
-// Imo programatically creating these divs would be more unreadable and unmaintainable than just naming them individually 
-const HelloWorld = () => (
+// Imo programatically creating these divs would be more unreadable and unmaintainable than just naming them individually
+const Spinner = () => (
         <div className="Spinner">
                 <div className="rect1"/>
                 <div className="rect2"/>
@@ -14,4 +14,4 @@ const HelloWorld = () => (
         </div>
 );
 
-export default HelloWorld;
+export default Spinner;

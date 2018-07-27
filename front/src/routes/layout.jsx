@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 
 // Components
 import Header from '../components/header';
-import Spinner from '../components/spinner';
+import Search from '../components/search';
 
 
 export default class Layout extends React.Component {
@@ -13,21 +13,19 @@ export default class Layout extends React.Component {
 		super(props);
 
 		this.state = {
-			data: [],
-			isLoading: true
+			data: 'wow'
 		};
 
 	}
 
 	render () {
-		const { isLoading } = this.state;
 
 		return (
 			<Route
 				render={matchProps => (
 					<React.Fragment>
 						<Header />
-						{isLoading ? <Spinner /> : <div> loading </div>}
+						<Search />
 					</React.Fragment>
 				)}
 			/>
