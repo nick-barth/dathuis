@@ -6,7 +6,8 @@
 	grid-gap: .2rem;
 }
 
-.results__no-results {
+.results__no-results,
+.results__spinner {
 	display: block;
 	position: absolute;
 	left: 50%;

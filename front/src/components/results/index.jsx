@@ -38,7 +38,7 @@ export default class Results extends React.Component {
 				<Query query={GET_SEARCH_RESULTS} variables={{searchString: search }}>
 					{({ loading, error, data }) => {
 						console.log(data);
-						if (loading) return (<Spinner />);
+						if (loading) return (<div className="results__spinner"> <Spinner /> </div>);
 						if (error) return `Error!: ${error}`;
 						if (data.search[0]) return data.search.map(item => {
 							return <Card data={item} key={item.last_name} />
