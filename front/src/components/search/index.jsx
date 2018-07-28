@@ -7,6 +7,10 @@ import { GET_SEARCH_RESULTS } from '../../queries';
 
 // Components
 import Spinner from '../spinner';
+import Card from '../card';
+
+// CSS
+import './styles.css';
 
 export default class Overview extends React.Component {
 
@@ -33,7 +37,7 @@ export default class Overview extends React.Component {
 	handleChange(newValue) {
 		this.debounce(() => {
   			this.setState({ search: newValue})
-		}, 750);
+		}, 500);
 	}
 
 	render () {
@@ -42,7 +46,7 @@ export default class Overview extends React.Component {
 		return (
 			<React.Fragment>
 				<div className="search__container">
-					<input className="search__input" onChange={(e) => this.handleChange(e.target.value) } />
+					<input type="text" className="search__textbox" placeholder="Search" onChange={(e) => this.handleChange(e.target.value) } />
 				</div>
 				<Query query={GET_SEARCH_RESULTS} variables={{searchString: search }}>
 					{({ loading, error, data }) => {
@@ -50,11 +54,8 @@ export default class Overview extends React.Component {
 						if (loading) return (<Spinner />);
 						if (error) return `Error!: ${error}`;
 						if (data.search[0]) return data.search.map(item => {
-							return (
-								<div key={item.last_name}>
-									{item.first_name} {item.last_name}
-								</div>
-							)
+							console.log(item);
+							return <Card data={item} key={item.last_name} />
 						});
 						return null;
 					}}
@@ -63,5 +64,6 @@ export default class Overview extends React.Component {
 		);
 	}
 }
+
 
 

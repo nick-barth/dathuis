@@ -1,7 +1,7 @@
 import React from 'react';
 
 // CSS
-import './index.css';
+import './styles.css';
 
 // Imo programatically creating these divs would be more unreadable and unmaintainable than just naming them individually
 const Spinner = () => (

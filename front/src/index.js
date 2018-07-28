@@ -8,7 +8,7 @@ import ApolloClient from "apollo-boost";
 import App from './app.jsx';
 
 // CSS - doing monolithic css, not setting up webpack.
-import './index.css';
+import './styles.css';
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/"

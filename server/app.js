@@ -20,11 +20,11 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     search: (parent, args, context, info) => {
-		const { filter } = args;
-		const results = filter ?
+		const results = args.filter ?
 			data.filter((item) => {
-				const firstNameMatch = item.first_name.includes(filter);
-				const lastNameMatch = item.last_name ? item.last_name.includes(filter) : false;
+				const search = args.filter.toLowerCase();
+				const firstNameMatch = item.first_name.toLowerCase().includes(search);
+				const lastNameMatch = item.last_name ? item.last_name.toLowerCase().includes(search) : false;
 				return (firstNameMatch || lastNameMatch)
 			}).slice(0,10)
 		: [];

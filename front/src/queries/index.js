@@ -5,6 +5,8 @@ query search($searchString: String!){
   search(filter: $searchString) {
     first_name
     last_name
+	origin
+	photo
   }
 }
 `;

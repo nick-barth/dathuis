@@ -1,0 +1,31 @@
+/*
+thanks guy - https://codepen.io/berkpw/pen/KzONKo
+*/
+
+.search__textbox {
+  outline: 0;
+  height: 2.5rem;
+  width: 100%;
+  line-height: 42px;
+  padding: 0 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #212121;
+  border: 0;
+  margin-bottom:2rem;
+}
+
+.search__textbox:focus {
+  outline: 0;
+  background-color: #FFF;
+}
+
+
+@media only screen and (min-width : 480px) {
+	.search__textbox {
+		-webkit-border-radius: 4px;
+  		border-radius: 4px;
+		margin: 0 auto;
+		width: 15rem;
+	}
+
+}
