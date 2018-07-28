@@ -1,3 +1,6 @@
+
+// @flow
+
 // Vendors
 import React from 'react';
 
@@ -6,9 +9,14 @@ import Header from '../components/header';
 import Search from '../components/search';
 import Results from '../components/results';
 
-export default class Layout extends React.Component {
+type Props = null;
+type State = {
+	search: string
+}
 
-	constructor(props) {
+export default class Layout extends React.Component<Props, State> {
+
+	constructor(props: Props) {
 		super(props);
 
 		this.state = {
@@ -16,7 +24,7 @@ export default class Layout extends React.Component {
 		};
 	}
 
-	handleChange(search) {
+	handleChange(search: string):void {
 		this.setState({search});
 	}
 

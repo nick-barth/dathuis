@@ -1,19 +1,34 @@
+// @flow
+
 // Vendors
 import React from 'react';
 
 // CSS
 import './styles.css';
 
-const Card = ({data}) => (
-	<div className="card">
-		<img className="card__img" src={data.photo} alt={`${data.first_name} ${data.last_name}`} />
-		<div className="card__title">
-			{data.first_name} {data.last_name}
+type Props = {
+  data: {
+	  first_name: string,
+	  last_name: string,
+	  photo: string,
+	  origin: string
+  }
+};
+
+const Card = (props:Props) => {
+	const { first_name, last_name, photo, origin } = props.data;
+
+	return (
+		<div className="card">
+			<img className="card__img" src={photo} alt={`${first_name} ${last_name}`} />
+			<div className="card__title">
+				{first_name} {last_name}
+			</div>
+			<div className="card__subtitle">
+				{origin}
+			</div>
 		</div>
-		<div className="card__subtitle">
-			{data.origin}
-		</div>
-	</div>
-);
+	)
+}
 
 export default Card;
