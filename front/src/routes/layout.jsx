@@ -9,7 +9,7 @@ import Header from '../components/header';
 import Search from '../components/search';
 import Results from '../components/results';
 
-type Props = null;
+type Props = {};
 type State = {
 	search: string
 }
